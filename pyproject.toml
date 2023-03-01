@@ -21,7 +21,7 @@ authors = [
 ]
 license = { file = "LICENSE" }
 classifiers = [
-    "License :: OSI Approved :: BSD 3-Clause License",
+    "License :: OSI Approved :: BSD License",
     "Programming Language :: Python :: 3",
 ]
 keywords = ["experiment", "parallel", "sklearn", "machine learning"]

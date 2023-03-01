@@ -164,6 +164,14 @@ sphinx-apidoc -o docs memento -f
 sphinx-build -W -b html docs docs/_build
 ```
 
+### Bump up version
+
+```bash
+# The `--dry` flag is for testing only. Remove `--dry` to update the version number.
+# Use `minor` instead of `patch` for feature updates.
+bumpver update --patch --dry
+```
+
 ### Run CI locally
 
 Install [act](https://github.com/nektos/act), then:

@@ -1,3 +1,6 @@
+[![PyPI](https://img.shields.io/pypi/v/memento-ml)](https://pypi.org/project/memento-ml/)
+![Python versions](https://img.shields.io/pypi/pyversions/memento-ml)
+
 # Memento
 
 Memento is a Python library for running computationally expensive experiments.

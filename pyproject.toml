@@ -19,6 +19,9 @@ authors = [
     { name = "Luke Chang", email = "luke.x.chang@gmail.com" },
     { name = "Jörg Simon Wicker", email = "j.wicker@auckland.ac.nz" },
 ]
+maintainers = [
+    { name = "Luke Chang", email = "luke.x.chang@gmail.com" },
+]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: BSD License",

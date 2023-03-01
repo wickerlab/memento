@@ -197,7 +197,7 @@ act
 - [Joshua de Wet](https://github.com/Dewera)
 - [Nipun Jasti](https://github.com/watefeenex)
 - [James Lamberton](https://github.com/JamesLamberton)
-- Joerg Wicker
+- [Joerg Wicker](https://github.com/joergwicker)
 - [Xinglong (Luke) Chang](https://github.com/changx03)
 
 ## License

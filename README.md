@@ -1,11 +1,16 @@
 [![PyPI](https://img.shields.io/pypi/v/memento-ml)](https://pypi.org/project/memento-ml/)
 ![Python versions](https://img.shields.io/pypi/pyversions/memento-ml)
 
-# Memento
+# MEMENTO
 
-Memento is a Python library for running computationally expensive experiments.
+`MEMENTO` is a Python library for running computationally expensive experiments.
 
-If you need to run a large number of time-consuming experiments Memento can help:
+Running complex sets of machine learning experiments is challenging and time-consuming due to the lack of a unified framework.
+This leaves researchers forced to spend time implementing necessary features such as parallelization, caching, and checkpointing themselves instead of focussing on their project.
+To simplify the process, we introduce `MEMENTO`, a Python package that is designed to aid researchers and data scientists in the efficient management and execution of computationally intensive experiments.
+`MEMENTO` has the capacity to streamline any experimental pipeline by providing a straightforward configuration matrix and the ability to concurrently run experiments across multiple threads.
+
+If you need to run a large number of time-consuming experiments `MEMENTO` can help:
 
 - Structure your configuration
 - Parallelize experiments across CPUs
@@ -15,6 +20,8 @@ If you need to run a large number of time-consuming experiments Memento can help
 
 ## Getting Started
 
+`MEMENTO` is officially available on PyPl. To install the package:
+
 ### Install
 
 ```bash
@@ -23,8 +30,8 @@ pip install memento-ml
 
 ### The Configuration Matrix
 
-The core of Memento is a configuration `matrix` that describes the list of experiments you
-want Memento to run. This must contain a key `parameters` which is itself a dict, this describes
+The core of `MEMENTO` is a configuration `matrix` that describes the list of experiments you
+want `MEMENTO` to run. This must contain a key `parameters` which is itself a dict, this describes
 each paramter you want to vary for your experiments and their values.
 
 As an example let's say you wanted to test a few simple linear classifiers on a number of
@@ -45,11 +52,11 @@ matrix = {
 }
 ```
 
-Memento would then generate 12 configurations by taking the _cartesian product_ of the
+`MEMENTO` would then generate 12 configurations by taking the _cartesian product_ of the
 parameters.
 
 Frequently you might also want to set some global configuration values, such as a regularization
-parameter or potentially even change your preprocessing pipeline. In this case Memento also
+parameter or potentially even change your preprocessing pipeline. In this case `MEMENTO` also
 accepts a "settings" key. These settings apply to all experiments and can be accessed from the
 configuration list as well as individual configurations.
 
@@ -115,79 +122,17 @@ Exiting due to dry run
 ## Code demo
 
 - Code demo can be found [here](demo).
-- `Memento` does not depend on `scikit-learn`. The `scikit-learn` and `jupyterlab` packages are required to run the demo (`./demo/*`).
+- `MEMENTO` does not depend on any ML packages, e.g., `scikit-learn`. The `scikit-learn` and `jupyterlab` packages are required to run the demo (`./demo/*`).
 
 ```bash
 pip install scikit-learn jupyterlab
-```
-
-## Developing
-
-### Install as local package in Editable mode
-
-```bash
-pip install -e .
-
-```
-
-### Install development dependencies
-
-```bash
-pip install memento-ml[dev]
-```
-
-### Tests
-
-```bash
-pytest
-```
-
-Alternatively to only run a subset of tests that haven't been marked as time consuming/slow you can use:
-
-```bash
-pytest -m "not slow"
-```
-
-### Linters
-
-```bash
-pylint memento
-```
-
-### Format code
-
-```bash
-black .
-```
-
-### Build Documentation
-
-```bash
-sphinx-apidoc -o docs memento -f
-sphinx-build -W -b html docs docs/_build
-```
-
-### Bump up version
-
-```bash
-# The `--dry` flag is for testing only. Remove `--dry` to update the version number.
-# Use `minor` instead of `patch` for feature updates.
-bumpver update --patch --dry
-```
-
-### Run CI locally
-
-Install [act](https://github.com/nektos/act), then:
-
-```bash
-act
 ```
 
 ## Roadmap
 
 - Finish HPC support
 - Improve result serialisation
-- Production testing & fleshed-out integration test suite
+- Improve customization for notification
 
 ## Contributors
 
@@ -197,9 +142,11 @@ act
 - [Joshua de Wet](https://github.com/Dewera)
 - [Nipun Jasti](https://github.com/watefeenex)
 - [James Lamberton](https://github.com/JamesLamberton)
-- [Joerg Wicker](https://github.com/joergwicker)
 - [Xinglong (Luke) Chang](https://github.com/changx03)
+- [Ioannis Ziogas](izio995@aucklanduni.ac.nz)
+- [Katharina Dost](katharina.dost@auckland.ac.nz)
+- [Joerg Wicker](https://github.com/joergwicker)
 
 ## License
 
-Memento is licensed under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause) license.
+MEMENTO is licensed under the [3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause) license.

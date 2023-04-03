@@ -1,3 +1,7 @@
+"""
+This code demonstrates the scenario where 1 task in MEMENTO encounters an error.
+Created by: Zac Pullar-Strecker, 2022
+"""
 import functools
 from pprint import pprint
 

@@ -125,8 +125,10 @@ Exiting due to dry run
 - `MEMENTO` does not depend on any ML packages, e.g., `scikit-learn`. The `scikit-learn` and `jupyterlab` packages are required to run the demo (`./demo/*`).
 
 ```bash
-pip install scikit-learn jupyterlab
+pip install memento-ml scikit-learn jupyterlab
 ```
+
+The video demo is available on [YouTube](https://youtu.be/0OAf4xNqZIo).
 
 ## Roadmap
 

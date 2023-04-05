@@ -128,7 +128,8 @@ Exiting due to dry run
 pip install memento-ml scikit-learn jupyterlab
 ```
 
-The video demo is available on [YouTube](https://youtu.be/0OAf4xNqZIo).
+- The video demo is available on [YouTube](https://youtu.be/0OAf4xNqZIo).
+- A 5-mins shorter version is also available on [YouTube](https://youtu.be/10-3ZHDo0a4).
 
 ## Roadmap
 

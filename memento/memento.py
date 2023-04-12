@@ -243,4 +243,4 @@ def _wrapper(func: Callable) -> Callable:
 
 def _key_provider(func: Callable, config: Config):
     # The default behaviour caches on all arguments, including the config object.
-    return cloudpickle.dumps({"function": func, "args": [config]})
+    return cloudpickle.dumps({"function": func.__name__, "args": [config]})

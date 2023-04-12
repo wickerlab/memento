@@ -88,6 +88,16 @@ class Config:
         except KeyError:
             raise AttributeError(name) from None
 
+    def __str__(self):
+        pretty_dict = {}
+        for key, value in self._dict.items():
+            try:
+                value = value.__name__
+            except AttributeError:
+                value = value.__class__.__name__
+            pretty_dict[key] = value
+        return str(pretty_dict)
+
     def __repr__(self):
         return self._dict.__repr__()
 

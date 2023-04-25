@@ -18,6 +18,8 @@ If you need to run a large number of time-consuming experiments `MEMENTO` can he
 - Checkpoint in-progress experiments
 - Send notifications when experiments fail or finish
 
+[![Demo video](https://img.youtube.com/vi/GEtdCl1ZUWc/0.jpg)](http://www.youtube.com/watch?v=GEtdCl1ZUWc)
+
 ## Getting Started
 
 `MEMENTO` is officially available on PyPl. To install the package:

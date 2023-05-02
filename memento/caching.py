@@ -3,6 +3,7 @@ Contains classes for implementing caching of functions.
 """
 import os
 import sqlite3
+import hashlib
 import tempfile
 from abc import ABC, abstractmethod
 from typing import Callable
@@ -139,6 +140,7 @@ class FileSystemCacheProvider(CacheProvider):
         self._sql_insert = (
             f"INSERT OR REPLACE INTO {self._table_name}(key,value) VALUES(?,?)"
         )
+        self._cache_files_folder = "memento_cache"
 
         self._key_provider = key_provider or default_key_provider
 
@@ -149,6 +151,10 @@ class FileSystemCacheProvider(CacheProvider):
         Sets up the database, creating a "cache" table, with a key, value, and timestamp column.
         :return: Nothing.
         """
+        try:
+            os.mkdir(self._cache_files_folder)
+        except FileExistsError:
+            pass
         with self as database:
             database.execute(
                 f"""
@@ -192,13 +198,21 @@ class FileSystemCacheProvider(CacheProvider):
         with self as database:
             rows = database.execute(self._sql_select, (key,)).fetchall()
             if rows:
-                return cloudpickle.loads(rows[0][0])
+                with open(rows[0][0], "rb") as pkl_file:
+                    data = cloudpickle.load(pkl_file)
+                return data
 
             raise KeyError(f"Key '{key}' not in cache")
 
     def set(self, key: str, item) -> None:
+        bytes_key = str(key)
+        file_name = hashlib.sha256(bytes(bytes_key, "utf-8")).hexdigest()
+
+        path = f"{self._cache_files_folder}/{file_name}.pkl"
+        with open(path, "wb") as pkl_file:
+            cloudpickle.dump(item, pkl_file)
         with self as database:
-            database.execute(self._sql_insert, (key, cloudpickle.dumps(item)))
+            database.execute(self._sql_insert, (key, path))
             database.commit()
 
     def contains(self, key: str) -> bool:

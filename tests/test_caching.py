@@ -1,7 +1,7 @@
 import time
 import os
 import tempfile
-
+import hashlib
 from sqlite3 import Connection
 from unittest.mock import Mock
 import pytest
@@ -147,7 +147,14 @@ class TestFileSystemCacheProvider:
 
     def test_file_system_cache_provider_get_works_when_data_in_cache(self):
         connection = Mock(spec_set=Connection)
-        connection.execute().fetchall.return_value = [[cloudpickle.dumps("value")]]
+        try:
+            os.mkdir("memento_cache")
+        except FileExistsError:
+            pass
+        path = f"memento_cache/{hashlib.sha256(b'key').hexdigest()}.pkl"
+        with open(path, "wb") as test_file:
+            cloudpickle.dump("value", test_file)
+        connection.execute().fetchall.return_value = [[path]]
         provider = FileSystemCacheProvider(connection=connection)
 
         value = provider.get("key")
@@ -166,7 +173,10 @@ class TestFileSystemCacheProvider:
 
     def test_file_system_cache_provider_contains_works_when_key_in_file(self):
         connection = Mock(spec_set=Connection)
-        connection.execute().fetchall.return_value = [[cloudpickle.dumps("value")]]
+        path = f"memento_cache/{hashlib.sha256(b'key').hexdigest()}.pkl"
+        with open(path, "wb") as test_file:
+            cloudpickle.dump("value", test_file)
+        connection.execute().fetchall.return_value = [[path]]
         provider = FileSystemCacheProvider(connection=connection)
 
         assert provider.contains("key") is True
@@ -223,7 +233,10 @@ class TestFileSystemCacheProvider:
 
     def test_file_system_cache_provider_does_not_close_supplied_connection(self):
         connection = Mock(spec_set=Connection)
-        connection.execute().fetchall.return_value = [[cloudpickle.dumps("value")]]
+        path = f"memento_cache/{hashlib.sha256(b'key').hexdigest()}.pkl"
+        with open(path, "wb") as test_file:
+            cloudpickle.dump("value", test_file)
+        connection.execute().fetchall.return_value = [[path]]
         provider = FileSystemCacheProvider(connection=connection)
 
         provider.set("key", "value")

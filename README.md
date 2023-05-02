@@ -18,6 +18,8 @@ If you need to run a large number of time-consuming experiments `MEMENTO` can he
 - Checkpoint in-progress experiments
 - Send notifications when experiments fail or finish
 
+[![Demo video](https://img.youtube.com/vi/GEtdCl1ZUWc/0.jpg)](http://www.youtube.com/watch?v=GEtdCl1ZUWc)
+
 ## Getting Started
 
 `MEMENTO` is officially available on PyPl. To install the package:
@@ -128,9 +130,6 @@ Exiting due to dry run
 pip install memento-ml scikit-learn jupyterlab
 ```
 
-- The video demo is available on [YouTube](https://youtu.be/0OAf4xNqZIo).
-- A 5-mins shorter version is also available on [YouTube](https://youtu.be/10-3ZHDo0a4).
-
 ## Roadmap
 
 - Finish HPC support
@@ -146,6 +145,7 @@ pip install memento-ml scikit-learn jupyterlab
 - [Nipun Jasti](https://github.com/watefeenex)
 - [James Lamberton](https://github.com/JamesLamberton)
 - [Xinglong (Luke) Chang](https://github.com/changx03)
+- [Liam Brydon](https://github.com/MyCreativityOutlet)
 - [Ioannis Ziogas](izio995@aucklanduni.ac.nz)
 - [Katharina Dost](katharina.dost@auckland.ac.nz)
 - [Joerg Wicker](https://github.com/joergwicker)

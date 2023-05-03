@@ -2,10 +2,12 @@ import time
 from sqlite3 import Connection
 from unittest.mock import Mock
 import pytest
-from memento.task_interface import Context, FileSystemCheckpointing
 import os
 import tempfile
 import cloudpickle
+from memento.task_interface import Context, FileSystemCheckpointing
+
+
 
 
 def constant_key_provider(

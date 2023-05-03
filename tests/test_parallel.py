@@ -95,7 +95,7 @@ class TestParallel:
             (delayed(function_with_dependencies)(4, 5), [9]),
             (delayed(function_referencing_locals)(5, 5), [10]),
             (delayed(function_with_local_import)(5, 6), [11]),
-            (delayed(list)(range(5)), [[0, 1, 2, 3, 4]]),
+            (delayed(lambda x: list(x))(range(5)), [[0, 1, 2, 3, 4]]),
         ],
     )
     def test_parallel_returns_correct_result(self, task: Callable, expected: List):

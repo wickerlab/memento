@@ -30,8 +30,11 @@ class TestMemento:
         self._notification_filepath = _create_file("_memento.notifications")
 
     def teardown_method(self, method):
-        os.unlink(self._cache_filepath)
-        os.unlink(self._notification_filepath)
+        try:
+            os.unlink(self._cache_filepath)
+            os.unlink(self._notification_filepath)
+        except PermissionError:
+            pass
 
     @pytest.mark.slow
     def test_memento(self):

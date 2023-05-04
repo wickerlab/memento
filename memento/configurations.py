@@ -92,10 +92,14 @@ class Config:
         pretty_dict = {}
         for key, value in self._dict.items():
             try:
-                value = value.__name__
+                str_value = str(value)
+                if "<" in str_value:
+                    str_value = value.__name__
             except AttributeError:
-                value = value.__class__.__name__
-            pretty_dict[key] = value
+                str_value = str(value)
+                if "<" in str_value:
+                    str_value = value.__class__.__name__
+            pretty_dict[key] = str_value
         return str(pretty_dict)
 
     def __repr__(self):

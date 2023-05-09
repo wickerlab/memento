@@ -130,6 +130,14 @@ Exiting due to dry run
 pip install memento-ml scikit-learn jupyterlab
 ```
 
+## Cite
+
+If you find Memeto useful and use it in your research, please cite
+
+> Pullar-Strecker, Zac; Chang, Xinglong; Brydon, Liam; Ziogas, Ioannis; Dost, Katharina; Wicker, Jörg
+> Memento: Facilitating Effortless, Efficient, and Reliable ML Experiments Journal Article Forthcoming
+> In: arXiv preprint, https://arxiv.org/abs/2304.09175.
+
 ## Roadmap
 
 - Finish HPC support

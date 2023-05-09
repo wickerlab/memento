@@ -132,7 +132,7 @@ pip install memento-ml scikit-learn jupyterlab
 
 ## Cite
 
-If you find Memeto useful and use it in your research, please cite
+If you find `MEMENTO` useful and use it in your research, please cite
 
 > Pullar-Strecker, Zac; Chang, Xinglong; Brydon, Liam; Ziogas, Ioannis; Dost, Katharina; Wicker, Jörg
 > Memento: Facilitating Effortless, Efficient, and Reliable ML Experiments Journal Article Forthcoming

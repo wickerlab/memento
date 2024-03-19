@@ -134,9 +134,9 @@ pip install memento-ml scikit-learn jupyterlab
 
 If you find `MEMENTO` useful and use it in your research, please cite
 
-> Memento: Facilitating Effortless, Efficient, and Reliable ML Experiments
-> Z Pullar-Strecker, X Chang, L Brydon, I Ziogas, K Dost, J Wicker
-> Joint European Conference on Machine Learning and Knowledge Discovery in Databases, 2023 - Springer
+> Memento: Facilitating Effortless, Efficient, and Reliable ML Experiments - 
+> Z Pullar-Strecker, X Chang, L Brydon, I Ziogas, K Dost, J Wicker -
+> Joint European Conference on Machine Learning and Knowledge Discovery in Databases, 2023 - Springer -
 > https://link.springer.com/chapter/10.1007/978-3-031-43430-3_21
 
 ## Roadmap

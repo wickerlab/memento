@@ -1,5 +1,7 @@
 [![PyPI](https://img.shields.io/pypi/v/memento-ml)](https://pypi.org/project/memento-ml/)
 ![Python versions](https://img.shields.io/pypi/pyversions/memento-ml)
+[![DOI](https://zenodo.org/badge/608197208.svg)](https://zenodo.org/doi/10.5281/zenodo.10929405)
+
 
 # MEMENTO
 

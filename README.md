@@ -1,5 +1,7 @@
 [![PyPI](https://img.shields.io/pypi/v/memento-ml)](https://pypi.org/project/memento-ml/)
 ![Python versions](https://img.shields.io/pypi/pyversions/memento-ml)
+[![DOI](https://zenodo.org/badge/608197208.svg)](https://zenodo.org/doi/10.5281/zenodo.10929405)
+
 
 # MEMENTO
 
@@ -134,9 +136,10 @@ pip install memento-ml scikit-learn jupyterlab
 
 If you find `MEMENTO` useful and use it in your research, please cite
 
-> Pullar-Strecker, Zac; Chang, Xinglong; Brydon, Liam; Ziogas, Ioannis; Dost, Katharina; Wicker, Jörg
-> Memento: Facilitating Effortless, Efficient, and Reliable ML Experiments Journal Article Forthcoming
-> In: arXiv preprint, https://arxiv.org/abs/2304.09175.
+> Memento: Facilitating Effortless, Efficient, and Reliable ML Experiments - 
+> Z Pullar-Strecker, X Chang, L Brydon, I Ziogas, K Dost, J Wicker -
+> Joint European Conference on Machine Learning and Knowledge Discovery in Databases, 2023 - Springer -
+> https://link.springer.com/chapter/10.1007/978-3-031-43430-3_21
 
 ## Roadmap
 

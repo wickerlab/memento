@@ -28,7 +28,7 @@ class Memento:
     """
 
     def __init__(
-        self, func: Callable, notification_provider: NotificationProvider = None
+        self, func: Callable, notification_provider: NotificationProvider = None, num_workers: int = None
     ):
         """
         :param func: Your experiment code. This will be called with an experiment configuration.
@@ -40,6 +40,7 @@ class Memento:
             notification_provider or DefaultNotificationProvider()
         )
         self._matrices: List[dict] = []
+        self._workers = num_workers
 
     def add_matrix(self, matrix: dict):
         """
@@ -169,8 +170,9 @@ class Memento:
             key=_key_provider,
         )
         manager = TaskManager(
+            workers=self._workers,
             notification_provider=self._notification_provider,
-            notify_on_complete=notify_on_complete,
+            notify_on_complete=notify_on_complete
         )
 
         # Run tasks for which we have no cached result

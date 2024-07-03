@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "memento-ml"
-version = "1.1.0"
+version = "1.2.0"
 description = "A Python library for running computationally expensive experiments"
 readme = "README.md"
 authors = [
@@ -65,7 +65,7 @@ log_cli=true
 log_level="NOTSET"
 
 [tool.bumpver]
-current_version = "1.1.0"
+current_version = "1.2.0"
 version_pattern = "MAJOR.MINOR.PATCH"
 commit_message = "bump version {old_version} -> {new_version}"
 commit = true
